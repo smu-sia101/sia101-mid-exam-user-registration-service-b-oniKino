@@ -42,5 +42,10 @@ namespace Exam.UserManager.Repository
         {
             return _db.Update(user) > 0;
         }
+
+        public IEnumerable<UserModel> GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

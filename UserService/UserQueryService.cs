@@ -42,17 +42,17 @@ namespace Exam.UserManager.Service
             {
                 //***
                 //TODO: Item 1: Implement the logic to get all users
-                IEnumerable<UserModel> user = null;
+                IEnumerable<UserModel> users = _userRepository.GetAll();
                 //***
 
-                if (user == null || !user.Any())
+                if (users == null || !users.Any())
                 {
                     return Enumerable.Empty<UserDTO>();
                 }
 
-                IEnumerable<UserDTO> userDto = _mapper.Map<IEnumerable<UserDTO>>(user);
+                IEnumerable<UserDTO> userDtos = _mapper.Map<IEnumerable<UserDTO>>(users);
 
-                return userDto;
+                return userDtos;
             }
 
             throw new ArgumentException("Permission not allowed!");
